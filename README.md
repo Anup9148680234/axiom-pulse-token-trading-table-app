@@ -85,8 +85,6 @@ Utility helpers provide:
 - **Radix UI primitives** wrapped as custom components  
   (`Card`, `Tooltip`, `Popover`, `ScrollArea`, `Button`, `Badge`)
 - **Lucide React** for icons
-- **Redux Toolkit** & **React Redux** for global and per-column state
-- **@tanstack/react-query** for async data handling
 - **React Compiler** for automatic memoization
 - **Geist Sans** & **Geist Mono** (Vercel fonts)
 
@@ -110,10 +108,9 @@ bun install
 | Path | Description |
 |------|-------------|
 | `src/app/page.tsx` | Main screen composition, including header actions and the token board container |
-| `src/components/features/TokenTable/index.tsx` | Connects mock data, hooks up the WebSocket simulator, and renders the three token lanes |
-| `src/components/features/TokenTable/TokenColumn.tsx` | Column component responsible for sorting and lane-specific behavior via Redux |
-| `src/components/features/TokenTable/TokenCard.tsx` | Individual token card with a subtle visual flash when price data changes |
-| `src/store/slices/tableSlice.ts` | Redux slice that stores sorting and filtering configuration for each lane |
+| `src/components/ui/TokenTable/TokenTable.tsx` | Connects mock data, hooks up the WebSocket simulator, and renders the three token lanes |
+| `src/components/ui/TokenTable/TokenColumn.tsx` | Column component responsible for sorting and lane-specific behavior via Redux |
+| `src/components/ui/TokenTable/TokenCard.tsx` | Individual token card with a subtle visual flash when price data changes |
 | `src/lib/mockData.ts` | Functions such as `generateMockTokens` used for building the initial dataset |
 | `src/services/websocketMock.ts` | Local service that simulates a WebSocket stream with timed updates |
 | `src/app/globals.css` | Global styling, Tailwind base layers, and the custom dark color system |
