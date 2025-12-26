@@ -39,16 +39,6 @@ This mimics **real-time market behavior** without relying on external APIs.
 
 Ensures the UI remains responsive even with frequent data updates.
 
----
-
-### 📊 Per-Column Sorting Controls
-Each lane supports sorting by:
-- Age  
-- Market cap  
-- Volume  
-- Price change  
-
-Sorting direction and criteria are stored in **Redux state** per column.
 
 ---
 
@@ -61,9 +51,8 @@ Includes:
 - `Card`
 - `Tooltip`
 - `Popover`
-- `Badge`
 - `ScrollArea`
-- `Button`
+
 
 All styled to resemble a **professional dark trading environment**.
 
