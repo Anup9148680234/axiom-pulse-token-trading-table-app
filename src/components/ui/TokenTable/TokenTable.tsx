@@ -4,13 +4,47 @@ import { useEffect, useState, useMemo } from 'react';
 import { Token, PriceUpdate } from '@/types/token';
 import { createMockService } from '@/services/websocketMock';
 import { TokenColumn } from './TokenGrid';
-
+import { generateMockTokens } from '@/lib/mockData';
 import { Skeleton } from '@/components/ui/Skeleton';
 
 export default function TokenTable() {
   const [tokens, setTokens] = useState<Token[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  
+  useEffect(() => {
 
+    const timer = setTimeout(async () =>{
+      const initialTokens = await generateMockTokens(100);
+      setTokens(initialTokens);
+      setIsLoading(false);
+
+      const ws = createMockService(initialTokens);
+      ws.connect();
+
+      const unsubscribe = ws.subscribe((update: PriceUpdate) => {
+        setTokens((prev) => 
+          prev.map((t) => {
+            if (t.id === update.tokenId) {
+              return {
+                ...t,
+                price: update.price,
+                marketCap: update.marketCap,
+                volume: update.volume,
+                priceChange: update.priceChange,
+              };
+            }
+            return t;
+          })
+        );
+      });
+
+      return () => {
+        unsubscribe();
+        ws.disconnect();
+      };
+    }, 1500); 
+    return () => clearTimeout(timer);
+  }, []);
 
   const newPairs = useMemo(() => tokens.filter(t => t.status === 'new'), [tokens]);
   const finalStretch = useMemo(() => tokens.filter(t => t.status === 'final'), [tokens]);
