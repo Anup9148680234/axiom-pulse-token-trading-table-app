@@ -126,50 +126,38 @@ const REALISTIC_TOKENS = [
 ];
 
 /* ------------------ SIGNAL CALC ------------------ */
-
 function computeSignals(token: Token): TokenSignals {
   const { priceChange, tradePressure, holders, createdAt, audit, transactions } =
     token;
 
   const ageMinutes = (Date.now() - createdAt) / 60000;
 
-  const buySellRatio =
-    tradePressure.sell === 0
-      ? tradePressure.buy
-      : tradePressure.buy / tradePressure.sell;
+  const buy = tradePressure.buy ?? 0;
+  const sell = tradePressure.sell ?? 0;
 
-  /* ---------- MOMENTUM (MC COLOR) ---------- */
+  const buySellRatio = sell === 0 ? buy : buy / sell;
 
   let momentum: TokenSignals["momentum"] = "neutral";
-
   if (priceChange.m5 > 5 && priceChange.h1 > 10 && buySellRatio > 1.2) {
     momentum = "bullish";
   } else if (priceChange.m5 < -5 || priceChange.h1 < -10) {
     momentum = "bearish";
   }
 
-  /* ---------- RISK ---------- */
-
   let risk: TokenSignals["risk"] = "low";
-
-  if (audit.scam || tradePressure.sell > tradePressure.buy * 1.5) {
+  if (audit.scam || sell > buy * 1.5) {
     risk = "high";
   } else if (ageMinutes < 5 || holders < 20) {
     risk = "medium";
   }
 
-  /* ---------- ACTIVITY (BORDER) ---------- */
-
   let activity: TokenSignals["activity"] = "normal";
-
-  if (ageMinutes < 2) {
-    activity = "hot";
-  } else if (transactions < 20) {
-    activity = "dead";
-  }
+  if (ageMinutes < 2) activity = "hot";
+  else if (transactions < 20) activity = "dead";
 
   return { momentum, risk, activity };
 }
+
 
 /* ------------------ MAIN GENERATOR ------------------ */
 
