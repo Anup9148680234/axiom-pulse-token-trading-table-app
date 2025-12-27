@@ -163,11 +163,11 @@ export const TokenCard = memo(({ token }: TokenCardProps) => {
             {/* Token Info */}
             <div className="flex flex-col justify-between py-0.5 transform translate-y-10">
               <div className="flex items-center gap-1.5 overflow-visible">
-                <span className="font-medium text-[16px] text-foreground tracking-tight ">
+                <span className="font-medium text-[14px]  sm:text-[16px] text-foreground tracking-tight ">
                   {token.symbol}
                 </span>
                 <Tooltipp content={token.name}>
-                  <span className="font-medium text-[16px] text-[#777A8C] line-clamp-1 max-w-40 hover:text-[#526fff]">
+                  <span className="font-medium text-[14px] sm:text-[16px] text-[#777A8C] truncate  sm:line-clamp-1  max-w-5 sm:max-w-40 hover:text-[#526fff]">
                     {token.name}
                   </span>
                 </Tooltipp>
@@ -261,57 +261,57 @@ export const TokenCard = memo(({ token }: TokenCardProps) => {
             <div className="grid grid-cols-7 gap-0.5 text-xs mb-3 mt-4">
               <div
                 className={cn(
-                  "flex items-center justify-center gap-1 rounded-full py-1 px-0 bg-black/40 border border-border font-medium",
+                  "flex items-center justify-center gap-0 sm:gap-1 rounded-full py-1 px-2 text-[12px] sm:text-[14px] sm:px-0 bg-black/40 border border-border font-medium",
                   token.priceChange.m5 >= 0 ? "text-[#12AF80]" : "text-red-400"
                 )}
               >
                 <Tooltipp content="Active Traders Map" side="bottom">
-                  <User size={14} className="mr-1" />
+                  <User size={14} className="mr-0 sm:mr-1 w-3 sm:w-3.5" />
                   {token.priceChange.m5.toFixed(0)}%
                 </Tooltipp>
               </div>
               <div
                 className={cn(
-                  "flex items-center justify-center gap-1 rounded-full py-1 px-0 bg-black/40 border border-border font-medium",
+                  "flex items-center justify-center gap-0 sm:gap-1 rounded-full py-1 px-2 text-[12px] sm:text-[14px] sm:px-0 bg-black/40 border border-border font-medium",
                   token.priceChange.h1 >= 0 ? "text-[#12AF80]" : "text-red-400"
                 )}
               >
                 <Tooltipp content="Dev Holding" side="bottom">
-                  <ChefHat size={14} className="mr-1" />
+                  <ChefHat size={14} className="mr-0 sm:mr-1 w-3 sm:w-3.5" />
                   {token.priceChange.h1.toFixed(0)}%
                 </Tooltipp>
               </div>
               <div
                 className={cn(
-                  "flex items-center justify-center gap-1 rounded-full py-1 px-0 bg-black/40 border border-border font-medium",
+                  "flex items-center justify-center gap-0 sm:gap-1 rounded-full py-1 px-2 text-[12px] sm:text-[14px] sm:px-0 bg-black/40 border border-border font-medium",
                   token.priceChange.h6 >= 0 ? "text-[#12AF80]" : "text-red-400"
                 )}
               >
                 <Tooltipp content="Snipers Holding" side="bottom">
-                  <Crosshair size={14} className="mr-1" />
+                  <Crosshair size={14} className="mr-0 sm:mr-1 w-3 sm:w-3.5" />
                   {token.priceChange.h6.toFixed(0)}%
                 </Tooltipp>
               </div>
               <div
                 className={cn(
-                  "flex items-center justify-center gap-1 rounded-full py-1 px-0 bg-black/40 border border-border font-medium",
+                  "flex items-center justify-center gap-0 sm:gap-1 rounded-full py-1 px-2 text-[12px] sm:text-[14px] sm:px-0 bg-black/40 border border-border font-medium",
                   token.priceChange.h24 >= 0 ? "text-[#12AF80]" : "text-red-400"
                 )}
               >
                 <Tooltipp content="Insiders holding" side="bottom">
-                  <Ghost size={14} className="mr-1" />
+                  <Ghost size={14} className="mr-0 sm:mr-1 w-3 sm:w-3.5" />
                   {token.priceChange.h24.toFixed(0)}%
                 </Tooltipp>
               </div>
 
               <div
                 className={cn(
-                  "flex items-center justify-center gap-1 rounded-full py-1 px-0 bg-black/40 border border-border font-medium",
+                  "flex items-center justify-center gap-0 sm:gap-1 rounded-full py-1 px-2 text-[12px] sm:text-[14px] sm:px-0 bg-black/40 border border-border font-medium",
                   token.priceChange.h24 >= 0 ? "text-[#12AF80]" : "text-red-400"
                 )}
               >
                 <Tooltipp content="Bundle holding" side="bottom">
-                  <BoxesIcon size={14} className="mr-1" />
+                  <BoxesIcon size={14} className="mr-0 sm:mr-1 w-3 sm:w-3.5" />
                   {token.priceChange.h24.toFixed(0)}%
                 </Tooltipp>
               </div>
@@ -321,13 +321,13 @@ export const TokenCard = memo(({ token }: TokenCardProps) => {
                   " w-0 hidden items-center justify-center gap-1 rounded-full py-1 px-0 bg-black/40 border border-border font-medium"
                 )}
               >
-                <BoxesIcon size={14} className="mr-1" />
+                <BoxesIcon size={14} className="mr-0 sm:mr-1 w-3 sm:w-3.5" />
                 {token.priceChange.h24.toFixed(0)}%
               </div>
 
               <div
                 className={cn(
-                  ` flex ml-8 w-18 ${
+                  ` flex ml-2 sm:ml-8 w-18 ${
                     showBuyBadge ? "opacity-100" : "opacity-0"
                   } items-center justify-center gap-1 rounded-full py-1 px-0 bg-[#3d6aff] text-black border border-border font-bold`
                 )}
