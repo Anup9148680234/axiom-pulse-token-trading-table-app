@@ -35,7 +35,7 @@ export const Navbar: FC = () => {
         </button>
 
         {/* Center: Nav links */}
-        <nav className="flex flex-1 items-center gap-3 -ml-3 -mt-px">
+        <nav className="hidden sm:flex flex-1 items-center gap-3 -ml-3 -mt-px">
           {navItems.map((item) => (
             <button
               key={item}
@@ -51,7 +51,7 @@ export const Navbar: FC = () => {
         </nav>
 
         {/* Right: Actions */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
           {/* Search circle */}
           <button className="flex h-8 w-9 items-center justify-center rounded-full border border-neutral-800 bg-black/40 hover:bg-black/70">
             <SearchIcon />
@@ -74,17 +74,17 @@ export const Navbar: FC = () => {
           </button>
 
           {/* Icon pills (star, bell, etc.) */}
-          <button className="flex h-8 w-8 items-center justify-center rounded-full border border-neutral-800 bg-[#22242d] text-lg hover:bg-black/70">
+          <button className="hidden sm:flex h-8 w-8 items-center justify-center rounded-full border border-neutral-800 bg-[#22242d] text-lg hover:bg-black/70">
             <StarIcon />
           </button>
 
           {/* Notification bell */}
-          <button className="flex h-8 w-8 items-center justify-center rounded-full border border-neutral-800 bg-[#22242d] text-lg hover:bg-black/70">
+          <button className="hidden sm:flex h-8 w-8 items-center justify-center rounded-full border border-neutral-800 bg-[#22242d] text-lg hover:bg-black/70">
             <BellIcon />
           </button>
 
           {/* Small stats pill */}
-          <button className="flex items-center gap-2 rounded-full border border-neutral-800 bg-[#22242d] px-3 py-1.5 hover:bg-black/70">
+          <button className="hidden sm:flex items-center gap-2 rounded-full border border-neutral-800 bg-[#22242d] px-3 py-1.5 hover:bg-black/70">
             
             <Wallet  size={16} stroke="#fff" />
             <SOLIcon height="8px" width="11x" />

@@ -261,7 +261,7 @@ export const TokenCard = memo(({ token }: TokenCardProps) => {
             <div className="grid grid-cols-6 sm:grid-cols-7 gap-0.5 text-xs mb-3 mt-4">
               <div
                 className={cn(
-                  "flex items-center justify-center gap-0 sm:gap-1 rounded-full py-1 px-2 text-[12px] sm:text-[14px] sm:px-0 bg-black/40 border border-border font-medium",
+                  "flex items-center justify-center gap-0 sm:gap-1 rounded-full py-1 px-4 text-[12px] sm:text-[14px] sm:px-0 bg-black/40 border border-border font-medium",
                   token.priceChange.m5 >= 0 ? "text-[#12AF80]" : "text-red-400"
                 )}
               >
@@ -272,7 +272,7 @@ export const TokenCard = memo(({ token }: TokenCardProps) => {
               </div>
               <div
                 className={cn(
-                  "flex items-center justify-center gap-0 sm:gap-1 rounded-full py-1 px-2 text-[12px] sm:text-[14px] sm:px-0 bg-black/40 border border-border font-medium",
+                  "flex items-center justify-center gap-0 sm:gap-1 rounded-full py-1 px-4 text-[12px] sm:text-[14px] sm:px-0 bg-black/40 border border-border font-medium",
                   token.priceChange.h1 >= 0 ? "text-[#12AF80]" : "text-red-400"
                 )}
               >
@@ -283,7 +283,7 @@ export const TokenCard = memo(({ token }: TokenCardProps) => {
               </div>
               <div
                 className={cn(
-                  "flex items-center justify-center gap-0 sm:gap-1 rounded-full py-1 px-2 text-[12px] sm:text-[14px] sm:px-0 bg-black/40 border border-border font-medium",
+                  "flex items-center justify-center gap-0 sm:gap-1 rounded-full py-1 px-4 text-[12px] sm:text-[14px] sm:px-0 bg-black/40 border border-border font-medium",
                   token.priceChange.h6 >= 0 ? "text-[#12AF80]" : "text-red-400"
                 )}
               >
@@ -294,7 +294,7 @@ export const TokenCard = memo(({ token }: TokenCardProps) => {
               </div>
               <div
                 className={cn(
-                  "flex items-center justify-center gap-0 sm:gap-1 rounded-full py-1 px-2 text-[12px] sm:text-[14px] sm:px-0 bg-black/40 border border-border font-medium",
+                  "flex items-center justify-center gap-0 sm:gap-1 rounded-full py-1 px-4 text-[12px] sm:text-[14px] sm:px-0 bg-black/40 border border-border font-medium",
                   token.priceChange.h24 >= 0 ? "text-[#12AF80]" : "text-red-400"
                 )}
               >
@@ -306,7 +306,7 @@ export const TokenCard = memo(({ token }: TokenCardProps) => {
 
               <div
                 className={cn(
-                  "hidden sm:flex items-center justify-center gap-0 sm:gap-1 rounded-full py-1 px-2 text-[12px] sm:text-[14px] sm:px-0 bg-black/40 border border-border font-medium",
+                  "hidden sm:flex items-center justify-center gap-0 sm:gap-1 rounded-full py-1 px-4 text-[12px] sm:text-[14px] sm:px-0 bg-black/40 border border-border font-medium",
                   token.priceChange.h24 >= 0 ? "text-[#12AF80]" : "text-red-400"
                 )}
               >
