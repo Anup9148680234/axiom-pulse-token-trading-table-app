@@ -258,7 +258,7 @@ export const TokenCard = memo(({ token }: TokenCardProps) => {
             </div>
 
             {/* Price Changes Grid */}
-            <div className="grid grid-cols-7 gap-0.5 text-xs mb-3 mt-4">
+            <div className="grid grid-cols-6 sm:grid-cols-7 gap-0.5 text-xs mb-3 mt-4">
               <div
                 className={cn(
                   "flex items-center justify-center gap-0 sm:gap-1 rounded-full py-1 px-2 text-[12px] sm:text-[14px] sm:px-0 bg-black/40 border border-border font-medium",
@@ -306,7 +306,7 @@ export const TokenCard = memo(({ token }: TokenCardProps) => {
 
               <div
                 className={cn(
-                  "flex items-center justify-center gap-0 sm:gap-1 rounded-full py-1 px-2 text-[12px] sm:text-[14px] sm:px-0 bg-black/40 border border-border font-medium",
+                  "hidden sm:flex items-center justify-center gap-0 sm:gap-1 rounded-full py-1 px-2 text-[12px] sm:text-[14px] sm:px-0 bg-black/40 border border-border font-medium",
                   token.priceChange.h24 >= 0 ? "text-[#12AF80]" : "text-red-400"
                 )}
               >
@@ -316,18 +316,11 @@ export const TokenCard = memo(({ token }: TokenCardProps) => {
                 </Tooltipp>
               </div>
 
-              <div
-                className={cn(
-                  " w-0 hidden items-center justify-center gap-1 rounded-full py-1 px-0 bg-black/40 border border-border font-medium"
-                )}
-              >
-                <BoxesIcon size={14} className="mr-0 sm:mr-1 w-3 sm:w-3.5" />
-                {token.priceChange.h24.toFixed(0)}%
-              </div>
+             
 
               <div
                 className={cn(
-                  ` flex ml-2 sm:ml-8 w-18 ${
+                  ` flex ml-4 sm:ml-8 w-16 sm:w-18 ${
                     showBuyBadge ? "opacity-100" : "opacity-0"
                   } items-center justify-center gap-1 rounded-full py-1 px-0 bg-[#3d6aff] text-black border border-border font-bold`
                 )}
