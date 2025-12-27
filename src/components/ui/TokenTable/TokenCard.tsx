@@ -321,7 +321,7 @@ export const TokenCard = memo(({ token }: TokenCardProps) => {
               <div
                 className={cn(
                   ` flex ml-4 sm:ml-12 md:-ml-3 xl:ml-8  w-16 sm:w-18 ${
-                    showBuyBadge ? "opacity-100" : "opacity-0"
+                    showBuyBadge ? "opacity-100" : "opacity-100 sm:opacity-0"
                   } items-center justify-center gap-1 rounded-full py-1 px-0 bg-[#3d6aff] text-black border border-border font-bold`
                 )}
               >
